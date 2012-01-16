@@ -16,3 +16,4 @@ group :development do
 end
 
 gem 'sinatra', '1.2.6'
+gem 'heroku'
