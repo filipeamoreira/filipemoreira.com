@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2012-01-16T09:09:11+01:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[My ramblings on web development topics]]></title>
+  <link href="http://filipemoreira.com/atom.xml" rel="self"/>
+  <link href="http://filipemoreira.com/"/>
+  <updated>2012-01-16T10:13:09+01:00</updated>
+  <id>http://filipemoreira.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Filipe Moreira]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Starting on the blogging path]]></title>
+    <link href="http://filipemoreira.com/blog/2012/01/16/starting-on-the-blogging-path/"/>
+    <updated>2012-01-16T10:07:00+01:00</updated>
+    <id>http://filipemoreira.com/blog/2012/01/16/starting-on-the-blogging-path</id>
+    <content type="html"><![CDATA[<p>After trying to blog and failing to continue writing I feel the need to start once more. Hopefully this time I&#8217;ll be able to sit down and write about technical subjects that interest me.</p>
+
+<p>My intention with this blog is to share findings and document my learning process as I build and work on different applications.</p>
+
+<p>More to come soon and thanks for stopping by.</p>
+]]></content>
+  </entry>
   
 </feed>
