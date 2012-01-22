@@ -52,6 +52,7 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 # blog_index_asides:
 # post_asides:
 # page_asides:
+portfolio_asides: []    
 
 # ----------------------- #
 #   3rd Party Settings    #
