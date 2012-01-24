@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | Freelance Web & Mobile Development]]></title>
+  <link href="http://filipemoreira.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://filipemoreira.com/"/>
+  <updated>2012-01-24T23:48:30+01:00</updated>
+  <id>http://filipemoreira.com/</id>
+  <author>
+    <name><![CDATA[Filipe Moreira]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Full text search with MongoDB]]></title>
+    <link href="http://filipemoreira.com/blog/2012/01/24/full-text-search-with-mongodb/"/>
+    <updated>2012-01-24T23:10:00+01:00</updated>
+    <id>http://filipemoreira.com/blog/2012/01/24/full-text-search-with-mongodb</id>
+    <content type="html"><![CDATA[<p>Recently I had to implement full text search on a Ruby on Rails application I was developing and based on my needs the easiest way to do it was building a helper array with the keywords needed and search using those keywords.</p>
+
+<p>To illustrate this I've implemented stock tickers search using the awesome <a href="http://rstat.us/">rstat.us</a> project. Have a look at my <a href="https://github.com/filipeamoreira/rstat.us">Github fork.</a></p>
+
+<p>``` ruby update.rb
+class Update
+...</p>
+
+<pre><code># Adds stocks array mentions
+key: stocks, Array, :default =&gt; []
+</code></pre>
+
+<p>  # Parses update text and build stocks array for simpler search
+  def parse_symbols</p>
+
+<pre><code>stocks = []
+self.text.split(' ').each do |update|
+  stocks &lt;&lt; update if update[0] == '$'
+end
+return stocks  
+</code></pre>
+
+<p>  end  <br/>
+end
+```</p>
+
+<p>and then the controller:
+``` ruby updates_controller.rb
+class UpdatesController &lt; ApplicationController
+...</p>
+
+<pre><code>def create
+  ...
+  u = Update.new(:text =&gt; params[:text],
+      :referral_id =&gt; params[:referral_id],
+      :author =&gt; current_user.author,
+      :twitter =&gt; do_tweet)
+
+  u.stocks = u.parse_symbols
+  ...
+end
+</code></pre>
+
+<p>end
+```
+So it basically looks for words starting with $ and adds it to the stocks array. We can then search using</p>
+
+<p>``` ruby Perform search using MongoDB built in text search</p>
+
+<pre><code>Update.all(:conditions =&gt; {:stocks =&gt; '$goog'})
+</code></pre>
+
+<p>```</p>
+
+<p>There are different solutions such as <a href="https://github.com/mauriciozaffari/mongoid_search">mongoid_search</a> but for my needs this approach works the best.</p>
+
+<p>MongoDB gives a lot of flexibility for the developer and speeds things up. Of course there are trade-offs to be made while using so YMMV.</p>
+]]></content>
+  </entry>
+  
+</feed>
