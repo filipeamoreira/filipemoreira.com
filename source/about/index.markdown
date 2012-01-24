@@ -6,7 +6,7 @@ sharing: false
 footer: true
 ---
 
-I'm a freelance web developer currently based between in Spain working with mostly UK and US customers but open to customers anywhere in the World.
+I'm a freelance web and mobile developer currently based between in Spain and working with mostly UK and US customers but open to customers anywhere in the World.
 
 I consider myself a full stack developer being able to work both on the frontend and well as the backend. My currently tools of the trade are:
 
@@ -19,3 +19,5 @@ Please do get in touch and we can start a conversation on what your needs are an
 [me@filipemoreira.com](mailto:me@filipemoreira.com)
 
 [github.com/filipeamoreira](github.com/filipeamoreira)
+
+[@filipeamoreira](http://twitter.com/filipeamoreira)
