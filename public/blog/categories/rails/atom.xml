@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | Freelance Web & Mobile Development]]></title>
   <link href="http://filipemoreira.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://filipemoreira.com/"/>
-  <updated>2012-01-24T23:50:41+01:00</updated>
+  <updated>2012-01-25T12:35:49+01:00</updated>
   <id>http://filipemoreira.com/</id>
   <author>
     <name><![CDATA[Filipe Moreira]]></name>
@@ -72,7 +72,7 @@ So it basically looks for words starting with $ and adds it to the stocks array.
 
 <p>```</p>
 
-<p>There are different solutions such as <a href="https://github.com/mauriciozaffari/mongoid_search">mongoid_search</a> but for my needs this approach works the best.</p>
+<p>There are different solutions such as <a href="https://github.com/mauriciozaffari/mongoid_search">mongoid_search</a> that could be used but for my needs this approach works the best.</p>
 
 <p>MongoDB gives a lot of flexibility for the developer and speeds things up. Of course there are trade-offs to be made while using so YMMV.</p>
 ]]></content>

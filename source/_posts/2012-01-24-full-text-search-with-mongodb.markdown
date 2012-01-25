@@ -50,6 +50,6 @@ So it basically looks for words starting with $ and adds it to the stocks array.
     Update.all(:conditions => {:stocks => '$goog'})
 ```
 
-There are different solutions such as [mongoid_search](https://github.com/mauriciozaffari/mongoid_search) but for my needs this approach works the best.
+There are different solutions such as [mongoid_search](https://github.com/mauriciozaffari/mongoid_search) that could be used but for my needs this approach works the best.
 
 MongoDB gives a lot of flexibility for the developer and speeds things up. Of course there are trade-offs to be made while using so YMMV.
