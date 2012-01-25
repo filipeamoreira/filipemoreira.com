@@ -2,7 +2,7 @@
 layout: post
 title: "Full text search with MongoDB"
 date: 2012-01-24 23:10
-comments: true
+comments: false
 categories: [Ruby, Rails, MongoDB]
 ---
 

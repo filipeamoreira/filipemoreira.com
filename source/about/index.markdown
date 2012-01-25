@@ -1,12 +1,14 @@
 ---
 layout: page
-title: "about"
+title: "About Filipe Moreira"
 comments: false
 sharing: false
 footer: true
 ---
 
-I'm a freelance web and mobile developer currently based between in Spain and working with mostly UK and US customers but open to customers anywhere in the World.
+My name is Filipe Moreira and I'm a freelance web and mobile developer currently focusing on Ruby on Rails and Javascript applications.
+
+<img src="/images/filipemoreira.jpg" alt="Filipe Moreira" class='about-image'/>
 
 I consider myself a full stack developer being able to work both on the frontend and well as the backend. My currently tools of the trade are:
 
@@ -14,10 +16,12 @@ I consider myself a full stack developer being able to work both on the frontend
 * Javascript on the frontend with the help of jQuery, Backbone and Raphael.js among others.
 * Semantic correct and standard based HTML and CSS including HTML5 technologies and CSS3
 
-Please do get in touch and we can start a conversation on what your needs are and how I can help your company.
+## Contact me
 
-[me@filipemoreira.com](mailto:me@filipemoreira.com)
+If you want to hire me to work on your own projects please do get in touch:
 
-[github.com/filipeamoreira](github.com/filipeamoreira)
+* Email: [me@filipemoreira.com](mailto:me@filipemoreira.com)
+* Twitter: [@filipeamoreira](http://twitter.com/filipeamoreira)
+* Skype: [filipeamoreira](skype:filipeamoreira?call)
+* Github: [github.com/filipeamoreira](http://github.com/filipeamoreira)
 
-[@filipeamoreira](http://twitter.com/filipeamoreira)

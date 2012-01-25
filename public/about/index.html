@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>about - Freelance Web & Mobile Development</title>
+  <title>About Filipe Moreira - Freelance Web & Mobile Development</title>
   <meta name="author" content="Filipe Moreira">
 
   
-  <meta name="description" content="About I&#8217;m a freelance web and mobile developer currently based between in Spain and working with mostly UK and US customers but open to &hellip;">
+  <meta name="description" content="About Filipe Moreira My name is Filipe Moreira and I&#8217;m a freelance web and mobile developer currently focusing on Ruby on Rails and Javascript &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,11 +79,13 @@
 <article role="article">
   
   <header>
-    <h1 class="entry-title">About</h1>
+    <h1 class="entry-title">About Filipe Moreira</h1>
     
   </header>
   
-  <p>I&#8217;m a freelance web and mobile developer currently based between in Spain and working with mostly UK and US customers but open to customers anywhere in the World.</p>
+  <p>My name is Filipe Moreira and I&#8217;m a freelance web and mobile developer currently focusing on Ruby on Rails and Javascript applications.</p>
+
+<p><img src="/images/filipemoreira.jpg" alt="Filipe Moreira" class='about-image'/></p>
 
 <p>I consider myself a full stack developer being able to work both on the frontend and well as the backend. My currently tools of the trade are:</p>
 
@@ -94,13 +96,17 @@
 </ul>
 
 
-<p>Please do get in touch and we can start a conversation on what your needs are and how I can help your company.</p>
+<h2>Contact me</h2>
 
-<p><a href="mailto:me@filipemoreira.com">me@filipemoreira.com</a></p>
+<p>If you want to hire me to work on your own projects please do get in touch:</p>
 
-<p><a href="github.com/filipeamoreira">github.com/filipeamoreira</a></p>
+<ul>
+<li>Email: <a href="mailto:me@filipemoreira.com">me@filipemoreira.com</a></li>
+<li>Twitter: <a href="http://twitter.com/filipeamoreira">@filipeamoreira</a></li>
+<li>Skype: <a href="skype:filipeamoreira?call">filipeamoreira</a></li>
+<li>Github: <a href="http://github.com/filipeamoreira">github.com/filipeamoreira</a></li>
+</ul>
 
-<p><a href="http://twitter.com/filipeamoreira">@filipeamoreira</a></p>
 
   
     <footer>
@@ -129,8 +135,62 @@
   </ul>
 </section>
 
+<section>
+  <h1>Github Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/filipeamoreira">@filipeamoreira</a> on Github
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'filipeamoreira',
+            count: 110,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
 
 
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("filipeamoreira", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/filipeamoreira" class="twitter-follow-button" data-show-count="false">Follow @filipeamoreira</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/106304448786210158447?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 
 
 
