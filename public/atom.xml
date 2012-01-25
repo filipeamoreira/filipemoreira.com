@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Freelance Web & Mobile Development]]></title>
+  <link href="http://filipemoreira.com/atom.xml" rel="self"/>
+  <link href="http://filipemoreira.com/"/>
+  <updated>2012-01-25T13:40:29+01:00</updated>
+  <id>http://filipemoreira.com/</id>
+  <author>
+    <name><![CDATA[Filipe Moreira]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Full text search with MongoDB]]></title>
+    <link href="http://filipemoreira.com/blog/2012/01/24/full-text-search-with-mongodb/"/>
+    <updated>2012-01-24T23:10:00+01:00</updated>
+    <id>http://filipemoreira.com/blog/2012/01/24/full-text-search-with-mongodb</id>
+    <content type="html"><![CDATA[<p>Recently I had to implement full text search on a Ruby on Rails application I was developing and based on my needs the easiest way to do it was building a helper array with the keywords needed and search using those keywords.</p>
+
+<p>To illustrate this I&#8217;ve implemented stock tickers search using the awesome <a href="http://rstat.us/">rstat.us</a> project. Have a look at my <a href="https://github.com/filipeamoreira/rstat.us">Github fork.</a></p>
+
+<figure class='code'><figcaption><span>update.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Update</span>
+</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'>    <span class="c1"># Adds stocks array mentions</span>
+</span><span class='line'>    <span class="n">key</span><span class="p">:</span> <span class="n">stocks</span><span class="p">,</span> <span class="nb">Array</span><span class="p">,</span> <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="o">[]</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># Parses update text and build stocks array for simpler search</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">parse_symbols</span>
+</span><span class='line'>    <span class="n">stocks</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">update</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">stocks</span> <span class="o">&lt;&lt;</span> <span class="n">update</span> <span class="k">if</span> <span class="n">update</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="s1">&#39;$&#39;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">stocks</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and then the controller:</p>
+
+<figure class='code'><figcaption><span>updates_controller.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">UpdatesController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">create</span>
+</span><span class='line'>      <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'>      <span class="n">u</span> <span class="o">=</span> <span class="no">Update</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:text</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:text</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'>          <span class="ss">:referral_id</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:referral_id</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'>          <span class="ss">:author</span> <span class="o">=&gt;</span> <span class="n">current_user</span><span class="o">.</span><span class="n">author</span><span class="p">,</span>
+</span><span class='line'>          <span class="ss">:twitter</span> <span class="o">=&gt;</span> <span class="n">do_tweet</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">u</span><span class="o">.</span><span class="n">stocks</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">parse_symbols</span>
+</span><span class='line'>      <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So it basically looks for words starting with $ and adds it to the stocks array. We can then search using</p>
+
+<figure class='code'><figcaption><span>Perform search using MongoDB built in text search</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Update</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="ss">:conditions</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:stocks</span> <span class="o">=&gt;</span> <span class="s1">&#39;$goog&#39;</span><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There are different solutions such as <a href="https://github.com/mauriciozaffari/mongoid_search">mongoid_search</a> that could be used but for my needs this approach works the best.</p>
+
+<p>MongoDB gives a lot of flexibility for the developer and speeds things up. Of course there are trade-offs to be made while using so YMMV.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Starting on the blogging path]]></title>
+    <link href="http://filipemoreira.com/blog/2012/01/16/starting-on-the-blogging-path/"/>
+    <updated>2012-01-16T10:07:00+01:00</updated>
+    <id>http://filipemoreira.com/blog/2012/01/16/starting-on-the-blogging-path</id>
+    <content type="html"><![CDATA[<p>After trying to blog and failing to continue writing I feel the need to start once more. Hopefully this time I&#8217;ll be able to sit down and write about technical subjects that interest me.</p>
+
+<p>My intention with this blog is to share findings and document my learning process as I build and work on different applications.</p>
+
+<p>More to come soon and thanks for stopping by.</p>
+]]></content>
+  </entry>
+  
+</feed>

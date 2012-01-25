@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://filipemoreira.com/blog/2012/01/16/starting-on-the-blogging-path/</loc>
+        <lastmod>2012-01-16T10:13:48+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://filipemoreira.com/blog/2012/01/24/full-text-search-with-mongodb/</loc>
+        <lastmod>2012-01-25T13:40:19+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://filipemoreira.com/about/</loc>
+        <lastmod>2012-01-25T13:33:19+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://filipemoreira.com/blog/archives/</loc>
+        <lastmod>2012-01-25T13:40:19+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://filipemoreira.com/</loc>
+        <lastmod>2012-01-25T13:40:19+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://filipemoreira.com/portfolio/</loc>
+        <lastmod>2012-01-24T13:05:25+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://filipemoreira.com/projects/</loc>
+        <lastmod>2012-01-22T22:17:13+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://filipemoreira.com/work/</loc>
+        <lastmod>2012-01-24T12:23:06+01:00</lastmod>
+    </url>
+</urlset>
