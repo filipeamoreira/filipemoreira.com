@@ -9,7 +9,7 @@
   <meta name="author" content="Filipe Moreira">
 
   
-  <meta name="description" content="Recently I had to implement full text search on a Ruby on Rails application I was developing and based on my needs the easiest way to do it was &hellip;">
+  <meta name="description" content="This post describe how to host a subdomain route for a alien application inside a Ruby on Rails app. Wordpress is used here as an example but these &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/">Routing a Wordpress Blog Inside a Rails App</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-01T07:22:00+01:00" pubdate data-updated="true">Feb 1<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This post describe how to host a subdomain route for a alien application inside a Ruby on Rails app. Wordpress is used here as an example but these instructions work with any outside url.</p>
+
+<p>If you do have control over the web server you can use a url rewrite to accomplish this. See steps for doing this using <a href="http://www.igvita.com/2007/07/04/integrating-wordpress-and-rails/">Apache</a> or <a href="http://www.kalzumeus.com/2009/08/22/using-wordpress-and-rails-on-the-same-domain/">nginx</a>.</p>
+
+<p>However what about when you have no control over the web server layer (such as when hosting the Rails application on Heroku)? The answer is to use the Rails routing engine do the routing.</p>
+
+<figure class='code'><figcaption><span>config/routes.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">match</span> <span class="s2">&quot;/blog&quot;</span> <span class="o">=&gt;</span> <span class="n">redirect</span><span class="p">(</span><span class="s2">&quot;http://yourwordpressblog.com&quot;</span><span class="p">),</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:blog</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will match any &#8216;/blog&#8217; route and redirect to your chosen domain.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -240,6 +287,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/">Routing a Wordpress blog inside a Rails app</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/01/24/full-text-search-with-mongodb/">Full text search with MongoDB</a>

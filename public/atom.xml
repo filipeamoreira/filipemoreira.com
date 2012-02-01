@@ -4,7 +4,7 @@
   <title><![CDATA[Freelance Web & Mobile Development]]></title>
   <link href="http://filipemoreira.com/atom.xml" rel="self"/>
   <link href="http://filipemoreira.com/"/>
-  <updated>2012-01-25T13:40:29+01:00</updated>
+  <updated>2012-02-01T07:47:42+01:00</updated>
   <id>http://filipemoreira.com/</id>
   <author>
     <name><![CDATA[Filipe Moreira]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Routing a Wordpress blog inside a Rails app]]></title>
+    <link href="http://filipemoreira.com/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/"/>
+    <updated>2012-02-01T07:22:00+01:00</updated>
+    <id>http://filipemoreira.com/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app</id>
+    <content type="html"><![CDATA[<p>This post describe how to host a subdomain route for a alien application inside a Ruby on Rails app. Wordpress is used here as an example but these instructions work with any outside url.</p>
+
+<p>If you do have control over the web server you can use a url rewrite to accomplish this. See steps for doing this using <a href="http://www.igvita.com/2007/07/04/integrating-wordpress-and-rails/">Apache</a> or <a href="http://www.kalzumeus.com/2009/08/22/using-wordpress-and-rails-on-the-same-domain/">nginx</a>.</p>
+
+<p>However what about when you have no control over the web server layer (such as when hosting the Rails application on Heroku)? The answer is to use the Rails routing engine do the routing.</p>
+
+<figure class='code'><figcaption><span>config/routes.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">match</span> <span class="s2">&quot;/blog&quot;</span> <span class="o">=&gt;</span> <span class="n">redirect</span><span class="p">(</span><span class="s2">&quot;http://yourwordpressblog.com&quot;</span><span class="p">),</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:blog</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will match any &#8216;/blog&#8217; route and redirect to your chosen domain.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Full text search with MongoDB]]></title>

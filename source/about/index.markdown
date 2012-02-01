@@ -25,3 +25,4 @@ If you want to hire me to work on your own projects please do get in touch:
 * Skype: [filipeamoreira](skype:filipeamoreira?call)
 * Github: [github.com/filipeamoreira](http://github.com/filipeamoreira)
 
+I'm currently based between Spain and the UK. Most of my customers are UK and US based but I would love to work with you no matter where you are.
