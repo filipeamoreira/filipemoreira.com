@@ -17,7 +17,7 @@ Technologies:
 * Javascript
 * Mysql
 
-[![jesushousebaltimorestore.org](/images/portfolio/jesushousebaltimorestore.jpg)](http://jesushousebaltimorestore.org)
+[![jesushousebaltimore.org](/images/portfolio/jesushousebaltimorestore.jpg)](http://jesushousebaltimore.org)
 
 ## Corporate Intranet Application
 
