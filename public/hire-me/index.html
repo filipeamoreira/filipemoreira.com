@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Routing a Wordpress blog inside a Rails app - Freelance Web & Mobile Development</title>
+  <title>Hire me - Freelance Web & Mobile Development</title>
   <meta name="author" content="Filipe Moreira">
 
   
-  <meta name="description" content="This post describe how to host a subdomain route for a alien application inside a Ruby on Rails app. Wordpress is used here as an example but these &hellip;">
+  <meta name="description" content="Hire Me Mar 9th, 2012 I&#8217;m available for mobile and web development work using Ruby and JavaScript. Get in touch: Email: me@filipemoreira.com &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://filipemoreira.com/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app">
+  <link rel="canonical" href="http://filipemoreira.com/hire-me">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,15 +77,42 @@
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">Routing a Wordpress Blog Inside a Rails App</h1>
-    
-    
+    <h1 class="entry-title">Hire Me</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-09T12:10:00+01:00" pubdate data-updated="true">Mar 9<span>th</span>, 2012</time></p>
+  </header>
+  
+  <p>I&#8217;m available for mobile and web development work using Ruby and JavaScript.</p>
+
+<p>Get in touch:</p>
+
+<ul>
+<li>Email: <a href="mailto:me@filipemoreira.com">me@filipemoreira.com</a></li>
+<li>Twitter: <a href="http://twitter.com/filipeamoreira">@filipeamoreira</a></li>
+<li>Skype: <a href="skype:filipeamoreira?call">filipeamoreira</a></li>
+<li>Github: <a href="http://github.com/filipeamoreira">github.com/filipeamoreira</a></li>
+</ul>
+
+
+  
+    <footer>
       <p class="meta">
         
+        
 
 
 
@@ -97,71 +124,12 @@
   
 
 
-<time datetime="2012-02-01T07:22:00+01:00" pubdate data-updated="true">Feb 1<span>st</span>, 2012</time>
+<time datetime="2012-03-09T12:10:00+01:00" pubdate data-updated="true">Mar 9<span>th</span>, 2012</time>
         
       </p>
-    
-  </header>
-
-
-<div class="entry-content"><p>This post describe how to host a subdomain route for a alien application inside a Ruby on Rails app. Wordpress is used here as an example but these instructions work with any outside url.</p>
-
-<p>If you do have control over the web server you can use a url rewrite to accomplish this. See steps for doing this using <a href="http://www.igvita.com/2007/07/04/integrating-wordpress-and-rails/">Apache</a> or <a href="http://www.kalzumeus.com/2009/08/22/using-wordpress-and-rails-on-the-same-domain/">nginx</a>.</p>
-
-<p>However what about when you have no control over the web server layer (such as when hosting the Rails application on Heroku)? The answer is to use the Rails routing engine do the routing.</p>
-
-<figure class='code'><figcaption><span>config/routes.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">match</span> <span class="s2">&quot;/blog&quot;</span> <span class="o">=&gt;</span> <span class="n">redirect</span><span class="p">(</span><span class="s2">&quot;http://yourwordpressblog.com&quot;</span><span class="p">),</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:blog</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This will match any &#8216;/blog&#8217; route and redirect to your chosen domain.</p>
-</div>
-
-
-  <footer>
-    <p class="meta">
       
+    </footer>
   
-
-<span class="byline author vcard">Posted by <span class="fn">Filipe Moreira</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-01T07:22:00+01:00" pubdate data-updated="true">Feb 1<span>st</span>, 2012</time>
-      
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://filipemoreira.com/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/" data-via="filipeamoreira" data-counturl="http://filipemoreira.com/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/" >Tweet</a>
-  
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/01/24/full-text-search-with-mongodb/" title="Previous Post: Full text search with MongoDB">&laquo; Full text search with MongoDB</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/03/09/using-pry-with-rails/" title="next Post: Using pry with Rails">Using pry with Rails &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
 </div>

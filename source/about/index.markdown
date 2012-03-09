@@ -16,13 +16,3 @@ I consider myself a full stack developer being able to work both on the frontend
 * Javascript on the frontend with the help of jQuery, Backbone and Raphael.js among others.
 * Semantic correct and standard based HTML and CSS including HTML5 technologies and CSS3
 
-## Contact me
-
-If you want to hire me to work on your own projects please do get in touch:
-
-* Email: [me@filipemoreira.com](mailto:me@filipemoreira.com)
-* Twitter: [@filipeamoreira](http://twitter.com/filipeamoreira)
-* Skype: [filipeamoreira](skype:filipeamoreira?call)
-* Github: [github.com/filipeamoreira](http://github.com/filipeamoreira)
-
-I'm currently based between Spain and the UK. Most of my customers are UK and US based but I would love to work with you no matter where you are.
