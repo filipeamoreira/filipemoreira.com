@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Freelance Web & Mobile Development</title>
+  <title>Using pry with Rails - Freelance Web & Mobile Development</title>
   <meta name="author" content="Filipe Moreira">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://filipemoreira.com">
+  <link rel="canonical" href="http://filipemoreira.com/blog/2012/03/09/using-pry-with-rails">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -75,15 +75,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/03/09/using-pry-with-rails/">Using Pry With Rails</a></h1>
+      <h1 class="entry-title">Using Pry With Rails</h1>
     
     
       <p class="meta">
@@ -106,7 +103,7 @@
   </header>
 
 
-  <div class="entry-content"><p><a href="http://pry.github.com/">Pry</a> is a IRB replacement with some very nice additional features. I&#8217;ll link to additional resources at the end of this post.</p>
+<div class="entry-content"><p><a href="http://pry.github.com/">Pry</a> is a IRB replacement with some very nice additional features. I&#8217;ll link to additional resources at the end of this post.</p>
 
 <p>Some of the additional features pry offers us include:</p>
 
@@ -203,69 +200,16 @@
 </ul>
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/">Routing a Wordpress Blog Inside a Rails App</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Filipe Moreira</span></span>
 
-<time datetime="2012-02-01T07:22:00+01:00" pubdate data-updated="true">Feb 1<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This post describe how to host a subdomain route for a alien application inside a Ruby on Rails app. Wordpress is used here as an example but these instructions work with any outside url.</p>
-
-<p>If you do have control over the web server you can use a url rewrite to accomplish this. See steps for doing this using <a href="http://www.igvita.com/2007/07/04/integrating-wordpress-and-rails/">Apache</a> or <a href="http://www.kalzumeus.com/2009/08/22/using-wordpress-and-rails-on-the-same-domain/">nginx</a>.</p>
-
-<p>However what about when you have no control over the web server layer (such as when hosting the Rails application on Heroku)? The answer is to use the Rails routing engine do the routing.</p>
-
-<figure class='code'><figcaption><span>config/routes.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">match</span> <span class="s2">&quot;/blog&quot;</span> <span class="o">=&gt;</span> <span class="n">redirect</span><span class="p">(</span><span class="s2">&quot;http://yourwordpressblog.com&quot;</span><span class="p">),</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:blog</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This will match any &#8216;/blog&#8217; route and redirect to your chosen domain.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/24/full-text-search-with-mongodb/">Full Text Search With MongoDB</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -277,142 +221,38 @@
   
 
 
-<time datetime="2012-01-24T23:10:00+01:00" pubdate data-updated="true">Jan 24<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Recently I had to implement full text search on a Ruby on Rails application I was developing and based on my needs the easiest way to do it was building a helper array with the keywords needed and search using those keywords.</p>
-
-<p>To illustrate this I&#8217;ve implemented stock tickers search using the awesome <a href="http://rstat.us/">rstat.us</a> project. Have a look at my <a href="https://github.com/filipeamoreira/rstat.us">Github fork.</a></p>
-
-<figure class='code'><figcaption><span>update.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Update</span>
-</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span>
-</span><span class='line'>    <span class="c1"># Adds stocks array mentions</span>
-</span><span class='line'>    <span class="n">key</span><span class="p">:</span> <span class="n">stocks</span><span class="p">,</span> <span class="nb">Array</span><span class="p">,</span> <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="o">[]</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1"># Parses update text and build stocks array for simpler search</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">parse_symbols</span>
-</span><span class='line'>    <span class="n">stocks</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">update</span><span class="o">|</span>
-</span><span class='line'>      <span class="n">stocks</span> <span class="o">&lt;&lt;</span> <span class="n">update</span> <span class="k">if</span> <span class="n">update</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="s1">&#39;$&#39;</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">stocks</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>and then the controller:</p>
-
-<figure class='code'><figcaption><span>updates_controller.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">UpdatesController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
-</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">create</span>
-</span><span class='line'>      <span class="o">.</span><span class="n">.</span><span class="o">.</span>
-</span><span class='line'>      <span class="n">u</span> <span class="o">=</span> <span class="no">Update</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:text</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:text</span><span class="o">]</span><span class="p">,</span>
-</span><span class='line'>          <span class="ss">:referral_id</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:referral_id</span><span class="o">]</span><span class="p">,</span>
-</span><span class='line'>          <span class="ss">:author</span> <span class="o">=&gt;</span> <span class="n">current_user</span><span class="o">.</span><span class="n">author</span><span class="p">,</span>
-</span><span class='line'>          <span class="ss">:twitter</span> <span class="o">=&gt;</span> <span class="n">do_tweet</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">u</span><span class="o">.</span><span class="n">stocks</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">parse_symbols</span>
-</span><span class='line'>      <span class="o">.</span><span class="n">.</span><span class="o">.</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So it basically looks for words starting with $ and adds it to the stocks array. We can then search using</p>
-
-<figure class='code'><figcaption><span>Perform search using MongoDB built in text search</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Update</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="ss">:conditions</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:stocks</span> <span class="o">=&gt;</span> <span class="s1">&#39;$goog&#39;</span><span class="p">})</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>There are different solutions such as <a href="https://github.com/mauriciozaffari/mongoid_search">mongoid_search</a> that could be used but for my needs this approach works the best.</p>
-
-<p>MongoDB gives a lot of flexibility for the developer and speeds things up. Of course there are trade-offs to be made while using so YMMV.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2012-03-09T10:00:00+01:00" pubdate data-updated="true">Mar 9<span>th</span>, 2012</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/16/starting-on-the-blogging-path/">Starting on the Blogging Path</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/irb/'>Irb</a>, <a class='category' href='/blog/categories/pry/'>Pry</a>, <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+  
+</span>
 
 
-<time datetime="2012-01-16T10:07:00+01:00" pubdate data-updated="true">Jan 16<span>th</span>, 2012</time>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>After trying to blog and failing to continue writing I feel the need to start once more. Hopefully this time I&#8217;ll be able to sit down and write about technical subjects that interest me.</p>
-
-<p>My intention with this blog is to share findings and document my learning process as I build and work on different applications.</p>
-
-<p>More to come soon and thanks for stopping by.</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://filipemoreira.com/blog/2012/03/09/using-pry-with-rails/" data-via="filipeamoreira" data-counturl="http://filipemoreira.com/blog/2012/03/09/using-pry-with-rails/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/" title="Previous Post: Routing a Wordpress blog inside a Rails app">&laquo; Routing a Wordpress blog inside a Rails app</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -441,7 +281,7 @@
 <section>
   <h1>Github Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/filipeamoreira">@filipeamoreira</a> on Github
@@ -471,7 +311,7 @@
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -499,6 +339,7 @@
 
   
 </aside>
+
 
     </div>
   </div>
