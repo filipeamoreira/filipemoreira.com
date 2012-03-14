@@ -16,3 +16,8 @@ I consider myself a full stack developer being able to work both on the frontend
 * Javascript on the frontend with the help of jQuery, Backbone and Raphael.js among others.
 * Semantic correct and standard based HTML and CSS including HTML5 technologies and CSS3
 
+Find me online:
+
+* Twitter: [@filipeamoreira](http://twitter.com/filipeamoreira)
+* Github: [github.com/filipeamoreira](http://github.com/filipeamoreira)
+* Hacker News: [news.ycombinator.com/user?id=famoreira](http://news.ycombinator.com/user?id=famoreira)
