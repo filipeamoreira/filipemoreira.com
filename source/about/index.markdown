@@ -6,12 +6,11 @@ sharing: false
 footer: true
 ---
 
+<img src="/images/filipemoreira.jpg" alt="Filipe Moreira" class='about-image'/>
+
 My name is Filipe Moreira and I'm a freelance web and mobile developer currently focusing on Ruby on Rails and Javascript applications.
 
-Check my [Rails contributions](http://contributors.rubyonrails.org/contributors/filipe-moreira/commits) page.
-
-
-<img src="/images/filipemoreira.jpg" alt="Filipe Moreira" class='about-image'/>
+I also  contribute to open source projects. Check my [Rails contributions](http://contributors.rubyonrails.org/contributors/filipe-moreira/commits) page and my [Github profile](https://github.com/filipeamoreira) for more details.
 
 I consider myself a full stack developer being able to work both on the frontend and well as the backend. My currently tools of the trade are:
 

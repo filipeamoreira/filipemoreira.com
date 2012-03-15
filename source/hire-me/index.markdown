@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Hire me"
-date: 2012-03-09 12:10
 comments: false
 sharing: false
 footer: true
