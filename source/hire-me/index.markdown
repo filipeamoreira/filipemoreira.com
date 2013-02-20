@@ -6,11 +6,11 @@ sharing: false
 footer: true
 ---
 
-I'm available for mobile and web development work using Ruby and JavaScript. 
+I'm available for mobile and web development work using Ruby and JavaScript.
 
 Get in touch:
 
-* Email: [me@filipemoreira.com](mailto:me@filipemoreira.com)
+* Email: [filipe@coderelax.com](mailto:filipe@coderelax.com)
 * Twitter: [@filipeamoreira](http://twitter.com/filipeamoreira)
-* Skype: [filipeamoreira](skype:filipeamoreira?call)
+* Skype: [coderelax](skype:coderelax?call)
 * Github: [github.com/filipeamoreira](http://github.com/filipeamoreira)
