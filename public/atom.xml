@@ -4,7 +4,7 @@
   <title><![CDATA[Freelance Mobile & Web Developer]]></title>
   <link href="http://filipemoreira.com/atom.xml" rel="self"/>
   <link href="http://filipemoreira.com/"/>
-  <updated>2013-02-20T11:10:10+01:00</updated>
+  <updated>2013-11-19T18:38:24+01:00</updated>
   <id>http://filipemoreira.com/</id>
   <author>
     <name><![CDATA[Filipe Moreira]]></name>
@@ -14,11 +14,67 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Using pry with Rails]]></title>
+    <title type="html"><![CDATA[My Top Five Rails 4 Features]]></title>
+    <link href="http://filipemoreira.com/blog/2013/11/07/my-top-five-rails-4-features/"/>
+    <updated>2013-11-07T18:03:00+01:00</updated>
+    <id>http://filipemoreira.com/blog/2013/11/07/my-top-five-rails-4-features</id>
+    <content type="html"><![CDATA[<p><a href="http://weblog.rubyonrails.org/2013/6/25/Rails-4-0-final/">Rails 4</a> was released last June and version <a href="http://weblog.rubyonrails.org/2013/11/1/Rails-4-0-1-has-been-released/">4.0.1</a> at the beginning of this month. It should be noted that Rails 4 requires Ruby 1.9.3 with Ruby 2.0 being recommended.</p>
+
+<p>Here I highlight my top five features:</p>
+
+<h2>Strong Parameters</h2>
+
+<p>Rails Mass assignment feature is quite handy but can be really dangerous. Last year Github was <a href="http://www.infoq.com/news/2012/03/GitHub-Compromised">compromised by an attack based on it</a>. Rails 4 has a new way of dealing with mass assignment each basically pushes the responsibility out of the model and into the controller where it belongs.</p>
+
+<p>The new approach was already available as a plugin called <a href="https://github.com/rails/strong_parameters">strong_parameters</a> and dhh as a blog post <a href="http://weblog.rubyonrails.org/2012/3/21/strong-parameters/">explaining it in detail</a>.</p>
+
+<h2>Live Streaming</h2>
+
+<p>Rails 4 brings Lives Streaming as a major new feature. To enable streaming we need to mixin the <code>ruby ActionController::Live</code> to the controller class. One use case for this is to enable push notifications to the frontend without relying on plugins like <a href="http://juggernaut.rubyforge.org/">Juggernaut</a> or outside services such as <a href="http://pusher.com/">Pusher</a>.</p>
+
+<p>You can read more about this feature <a href="http://www.sitepoint.com/streaming-with-rails-4/">here</a> and <a href="http://blog.phusion.nl/2012/08/03/why-rails-4-live-streaming-is-a-big-deal/">here</a>.</p>
+
+<h2>Russian Doll caching</h2>
+
+<p>Russian Doll caching describes the technique of using nested fragment caching. The idea is that a page can best divided multiple sections, each one being a fragment. These cached fragments are used independently and can be reused when the content changes. Changes to inner fragments caused a chain reaction which expires all outer fragment caches. Rails 4 uses caches digests to avoid the pain of maintaining cache version numbers for individual templates.</p>
+
+<p>You can read more about Russian Doll caching <a href="http://37signals.com/svn/posts/3112-how-basecamp-next-got-to-be-so-damn-fast-without-using-much-client-side-ui">here</a></p>
+
+<h2>Asynchronous Action Mailer</h2>
+
+<p>A new Queue framework was added to Rails 4 and Action Mailer are configured by default to use this new Queue interface. The interface remains very similar to Rails 3 developers with the added benefit that changing backend providers is as easy as changing a single line of code:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># production.rb</span>
+</span><span class='line'><span class="n">config</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="ss">ActiveSupport</span><span class="p">:</span><span class="ss">:Queue</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="c1"># In this case to use Sidekiq as the Action Mailer backend</span>
+</span><span class='line'><span class="n">config</span><span class="o">.</span><span class="n">action_mailer</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="ss">Sidekiq</span><span class="p">:</span><span class="ss">:Client</span><span class="o">::</span><span class="no">Queue</span><span class="o">.</span><span class="n">new</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can read more about this feature <a href="http://blog.remarkablelabs.com/2012/12/asynchronous-action-mailer-rails-4-countdown-to-2013">here</a></p>
+
+<h2>Other smaller enhancements</h2>
+
+<p>Rails 4 is now thread-safe by default. You can read about this change on this helpful <a href="http://tenderlovemaking.com/2012/06/18/removing-config-threadsafe.html">post</a> by Aaron Patterson.</p>
+
+<p>Another addition is Turbolinks which works similarly to pjax, fetching relevant content and updating the page to avoid a full reload. Read more about it <a href="http://blog.remarkablelabs.com/2012/12/turbolinks-rails-4-countdown-to-2013">here</a></p>
+
+<p>There are many more features that I will not be able to cover here. You can read the <a href="http://edgeguides.rubyonrails.org/4_0_release_notes.html">releases notes</a> to see the detailed changes.</p>
+
+<p>Rails 4.0.1 brings some stability improvements to Rails 4. The complete set of changes are shown <a href="http://weblog.rubyonrails.org/2013/11/1/Rails-4-0-1-has-been-released/">here</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Pry With Rails]]></title>
     <link href="http://filipemoreira.com/blog/2012/03/09/using-pry-with-rails/"/>
     <updated>2012-03-09T10:00:00+01:00</updated>
     <id>http://filipemoreira.com/blog/2012/03/09/using-pry-with-rails</id>
-    <content type="html"><![CDATA[<p><a href="http://pry.github.com/">Pry</a> is a IRB replacement with some very nice additional features. I&#8217;ll link to additional resources at the end of this post.</p>
+    <content type="html"><![CDATA[<p><a href="http://pry.github.com/">Pry</a> is a IRB replacement with some very nice additional features. I&rsquo;ll link to additional resources at the end of this post.</p>
 
 <p>Some of the additional features pry offers us include:</p>
 
@@ -61,7 +117,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>This will load try to load Pry and if failed will print a message to stdout. The exit command after Pry&#8217;s invocation is to avoid going back to IRB after the Pry session has finished.</p>
+<p>This will load try to load Pry and if failed will print a message to stdout. The exit command after Pry&rsquo;s invocation is to avoid going back to IRB after the Pry session has finished.</p>
 
 <p>The other part of the configuration is done on .pryrc</p>
 
@@ -96,7 +152,7 @@
 <span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">begin</span>
 </span><span class='line'>  <span class="nb">require</span> <span class="s2">&quot;awesome_print&quot;</span>
-</span><span class='line'>  <span class="no">Pry</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">print</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span><span class="o">|</span><span class="n">output</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span> <span class="no">Pry</span><span class="o">::</span><span class="no">Helpers</span><span class="o">::</span><span class="no">BaseHelpers</span><span class="o">.</span><span class="n">stagger_output</span><span class="p">(</span><span class="s2">&quot;=&gt; </span><span class="si">#{</span><span class="n">value</span><span class="o">.</span><span class="n">ai</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">output</span><span class="p">)}</span>
+</span><span class='line'>  <span class="no">Pry</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">print</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span><span class="o">|</span><span class="n">output</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span> <span class="ss">Pry</span><span class="p">:</span><span class="ss">:Helpers</span><span class="o">::</span><span class="no">BaseHelpers</span><span class="o">.</span><span class="n">stagger_output</span><span class="p">(</span><span class="s2">&quot;=&gt; </span><span class="si">#{</span><span class="n">value</span><span class="o">.</span><span class="n">ai</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">output</span><span class="p">)}</span>
 </span><span class='line'><span class="k">rescue</span> <span class="no">LoadError</span> <span class="o">=&gt;</span> <span class="n">err</span>
 </span><span class='line'>   <span class="nb">warn</span> <span class="s2">&quot;=&gt; Unable to load awesome_print&quot;</span>
 </span><span class='line'><span class="k">end</span>
@@ -108,7 +164,7 @@
 <p>For more information on Pry see:</p>
 
 <ul>
-<li><a href="http://pry.github.com/">Pry&#8217;s website</a></li>
+<li><a href="http://pry.github.com/">Pry&rsquo;s website</a></li>
 <li><a href="http://railscasts.com/episodes/280-pry-with-rails">Pry Railscast</a></li>
 <li><a href="https://github.com/filipeamoreira/dot-files/blob/master/_irbrc">My irbrc</a></li>
 <li><a href="https://github.com/filipeamoreira/dot-files/blob/master/_pryrc">My pryrc</a></li>
@@ -118,7 +174,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Routing a Wordpress blog inside a Rails app]]></title>
+    <title type="html"><![CDATA[Routing a Wordpress Blog Inside a Rails App]]></title>
     <link href="http://filipemoreira.com/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/"/>
     <updated>2012-02-01T07:22:00+01:00</updated>
     <id>http://filipemoreira.com/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app</id>
@@ -133,18 +189,18 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>This will match any &#8216;/blog&#8217; route and redirect to your chosen domain.</p>
+<p>This will match any &lsquo;/blog&rsquo; route and redirect to your chosen domain.</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Full text search with MongoDB]]></title>
+    <title type="html"><![CDATA[Full Text Search With MongoDB]]></title>
     <link href="http://filipemoreira.com/blog/2012/01/24/full-text-search-with-mongodb/"/>
     <updated>2012-01-24T23:10:00+01:00</updated>
     <id>http://filipemoreira.com/blog/2012/01/24/full-text-search-with-mongodb</id>
     <content type="html"><![CDATA[<p>Recently I had to implement full text search on a Ruby on Rails application I was developing and based on my needs the easiest way to do it was building a helper array with the keywords needed and search using those keywords.</p>
 
-<p>To illustrate this I&#8217;ve implemented stock tickers search using the awesome <a href="http://rstat.us/">rstat.us</a> project. Have a look at my <a href="https://github.com/filipeamoreira/rstat.us">Github fork.</a></p>
+<p>To illustrate this I&rsquo;ve implemented stock tickers search using the awesome <a href="http://rstat.us/">rstat.us</a> project. Have a look at my <a href="https://github.com/filipeamoreira/rstat.us">Github fork.</a></p>
 
 <figure class='code'><figcaption><span>update.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -163,7 +219,7 @@
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Update</span>
 </span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span>
 </span><span class='line'>    <span class="c1"># Adds stocks array mentions</span>
-</span><span class='line'>    <span class="n">key</span><span class="p">:</span> <span class="n">stocks</span><span class="p">,</span> <span class="nb">Array</span><span class="p">,</span> <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="o">[]</span>
+</span><span class='line'>    <span class="ss">key</span><span class="p">:</span> <span class="n">stocks</span><span class="p">,</span> <span class="nb">Array</span><span class="p">,</span> <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="o">[]</span>
 </span><span class='line'>
 </span><span class='line'>  <span class="c1"># Parses update text and build stocks array for simpler search</span>
 </span><span class='line'>  <span class="k">def</span> <span class="nf">parse_symbols</span>
@@ -222,11 +278,11 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Starting on the blogging path]]></title>
+    <title type="html"><![CDATA[Starting on the Blogging Path]]></title>
     <link href="http://filipemoreira.com/blog/2012/01/16/starting-on-the-blogging-path/"/>
     <updated>2012-01-16T10:07:00+01:00</updated>
     <id>http://filipemoreira.com/blog/2012/01/16/starting-on-the-blogging-path</id>
-    <content type="html"><![CDATA[<p>After trying to blog and failing to continue writing I feel the need to start once more. Hopefully this time I&#8217;ll be able to sit down and write about technical subjects that interest me.</p>
+    <content type="html"><![CDATA[<p>After trying to blog and failing to continue writing I feel the need to start once more. Hopefully this time I&rsquo;ll be able to sit down and write about technical subjects that interest me.</p>
 
 <p>My intention with this blog is to share findings and document my learning process as I build and work on different applications.</p>
 

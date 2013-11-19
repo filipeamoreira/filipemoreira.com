@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hire me - Freelance Mobile & Web Developer</title>
+  <title>Hire Me - Freelance Mobile & Web Developer</title>
   <meta name="author" content="Filipe Moreira">
 
   
-  <meta name="description" content="Hire Me I&#8217;m available for mobile and web development work using Ruby and JavaScript. Get in touch: Email: filipe@coderelax.com
-Twitter: @ &hellip;">
+  <meta name="description" content="Hire Me I&rsquo;m available for mobile and web development remote contracts using Ruby and JavaScript. Get in touch: Email: filipe@coderelax.com &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,10 +21,11 @@ Twitter: @ &hellip;">
   <link rel="canonical" href="http://filipemoreira.com/hire-me">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Freelance Mobile & Web Developer" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -85,7 +85,7 @@ Twitter: @ &hellip;">
     
   </header>
   
-  <p>I&#8217;m available for mobile and web development work using Ruby and JavaScript.</p>
+  <p>I&rsquo;m available for mobile and web development remote contracts using Ruby and JavaScript.</p>
 
 <p>Get in touch:</p>
 
@@ -114,19 +114,23 @@ Twitter: @ &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/03/09/using-pry-with-rails/">Using pry with Rails</a>
+        <a href="/blog/2013/11/07/my-top-five-rails-4-features/">My Top Five Rails 4 Features</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/">Routing a Wordpress blog inside a Rails app</a>
+        <a href="/blog/2012/03/09/using-pry-with-rails/">Using Pry With Rails</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/01/24/full-text-search-with-mongodb/">Full text search with MongoDB</a>
+        <a href="/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/">Routing a Wordpress Blog Inside a Rails App</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/01/16/starting-on-the-blogging-path/">Starting on the blogging path</a>
+        <a href="/blog/2012/01/24/full-text-search-with-mongodb/">Full Text Search With MongoDB</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/16/starting-on-the-blogging-path/">Starting on the Blogging Path</a>
       </li>
     
   </ul>
@@ -141,7 +145,7 @@ Twitter: @ &hellip;">
   <a href="https://github.com/filipeamoreira">@filipeamoreira</a> on GitHub
   
   <script type="text/javascript">
-    $.domReady(function(){
+    $(document).ready(function(){
         if (!window.jXHR){
             var jxhr = document.createElement('script');
             jxhr.type = 'text/javascript';
@@ -159,23 +163,6 @@ Twitter: @ &hellip;">
     });
   </script>
   <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating...</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("filipeamoreira", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/filipeamoreira" class="twitter-follow-button" data-show-count="false">Follow @filipeamoreira</a>
-  
 </section>
 
 
@@ -224,7 +211,7 @@ Twitter: @ &hellip;">
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

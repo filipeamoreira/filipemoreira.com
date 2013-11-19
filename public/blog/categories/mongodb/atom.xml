@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MongoDB | Freelance Mobile & Web Developer]]></title>
   <link href="http://filipemoreira.com/blog/categories/mongodb/atom.xml" rel="self"/>
   <link href="http://filipemoreira.com/"/>
-  <updated>2013-02-20T11:10:10+01:00</updated>
+  <updated>2013-11-19T18:38:24+01:00</updated>
   <id>http://filipemoreira.com/</id>
   <author>
     <name><![CDATA[Filipe Moreira]]></name>
@@ -20,11 +20,11 @@
     <id>http://filipemoreira.com/blog/2012/01/24/full-text-search-with-mongodb</id>
     <content type="html"><![CDATA[<p>Recently I had to implement full text search on a Ruby on Rails application I was developing and based on my needs the easiest way to do it was building a helper array with the keywords needed and search using those keywords.</p>
 
-<p>To illustrate this I've implemented stock tickers search using the awesome <a href="http://rstat.us/">rstat.us</a> project. Have a look at my <a href="https://github.com/filipeamoreira/rstat.us">Github fork.</a></p>
+<p>To illustrate this I&rsquo;ve implemented stock tickers search using the awesome <a href="http://rstat.us/">rstat.us</a> project. Have a look at my <a href="https://github.com/filipeamoreira/rstat.us">Github fork.</a></p>
 
 <p>``` ruby update.rb
 class Update
-...</p>
+&hellip;</p>
 
 <pre><code># Adds stocks array mentions
 key: stocks, Array, :default =&gt; []
@@ -47,7 +47,7 @@ end
 <p>and then the controller:
 ``` ruby updates_controller.rb
 class UpdatesController &lt; ApplicationController
-...</p>
+&hellip;</p>
 
 <pre><code>def create
   ...

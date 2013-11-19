@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Starting on the Blogging Path - Freelance Mobile & Web Developer</title>
+  <title>My Top Five Rails 4 Features - Freelance Mobile & Web Developer</title>
   <meta name="author" content="Filipe Moreira">
 
   
-  <meta name="description" content="After trying to blog and failing to continue writing I feel the need to start once more. Hopefully this time I&rsquo;ll be able to sit down and write &hellip;">
+  <meta name="description" content="Rails 4 was released last June and version 4.0.1 at the beginning of this month. It should be noted that Rails 4 requires Ruby 1.9.3 with Ruby 2.0 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://filipemoreira.com/blog/2012/01/16/starting-on-the-blogging-path">
+  <link rel="canonical" href="http://filipemoreira.com/blog/2013/11/07/my-top-five-rails-4-features">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Freelance Mobile & Web Developer" type="application/atom+xml">
@@ -82,7 +82,7 @@
   
   <header>
     
-      <h1 class="entry-title">Starting on the Blogging Path</h1>
+      <h1 class="entry-title">My Top Five Rails 4 Features</h1>
     
     
       <p class="meta">
@@ -98,18 +98,61 @@
   
 
 
-<time datetime="2012-01-16T10:07:00+01:00" pubdate data-updated="true">Jan 16<span>th</span>, 2012</time>
+<time datetime="2013-11-07T18:03:00+01:00" pubdate data-updated="true">Nov 7<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>After trying to blog and failing to continue writing I feel the need to start once more. Hopefully this time I&rsquo;ll be able to sit down and write about technical subjects that interest me.</p>
+<div class="entry-content"><p><a href="http://weblog.rubyonrails.org/2013/6/25/Rails-4-0-final/">Rails 4</a> was released last June and version <a href="http://weblog.rubyonrails.org/2013/11/1/Rails-4-0-1-has-been-released/">4.0.1</a> at the beginning of this month. It should be noted that Rails 4 requires Ruby 1.9.3 with Ruby 2.0 being recommended.</p>
 
-<p>My intention with this blog is to share findings and document my learning process as I build and work on different applications.</p>
+<p>Here I highlight my top five features:</p>
 
-<p>More to come soon and thanks for stopping by.</p>
+<h2>Strong Parameters</h2>
+
+<p>Rails Mass assignment feature is quite handy but can be really dangerous. Last year Github was <a href="http://www.infoq.com/news/2012/03/GitHub-Compromised">compromised by an attack based on it</a>. Rails 4 has a new way of dealing with mass assignment each basically pushes the responsibility out of the model and into the controller where it belongs.</p>
+
+<p>The new approach was already available as a plugin called <a href="https://github.com/rails/strong_parameters">strong_parameters</a> and dhh as a blog post <a href="http://weblog.rubyonrails.org/2012/3/21/strong-parameters/">explaining it in detail</a>.</p>
+
+<h2>Live Streaming</h2>
+
+<p>Rails 4 brings Lives Streaming as a major new feature. To enable streaming we need to mixin the <code>ruby ActionController::Live</code> to the controller class. One use case for this is to enable push notifications to the frontend without relying on plugins like <a href="http://juggernaut.rubyforge.org/">Juggernaut</a> or outside services such as <a href="http://pusher.com/">Pusher</a>.</p>
+
+<p>You can read more about this feature <a href="http://www.sitepoint.com/streaming-with-rails-4/">here</a> and <a href="http://blog.phusion.nl/2012/08/03/why-rails-4-live-streaming-is-a-big-deal/">here</a>.</p>
+
+<h2>Russian Doll caching</h2>
+
+<p>Russian Doll caching describes the technique of using nested fragment caching. The idea is that a page can best divided multiple sections, each one being a fragment. These cached fragments are used independently and can be reused when the content changes. Changes to inner fragments caused a chain reaction which expires all outer fragment caches. Rails 4 uses caches digests to avoid the pain of maintaining cache version numbers for individual templates.</p>
+
+<p>You can read more about Russian Doll caching <a href="http://37signals.com/svn/posts/3112-how-basecamp-next-got-to-be-so-damn-fast-without-using-much-client-side-ui">here</a></p>
+
+<h2>Asynchronous Action Mailer</h2>
+
+<p>A new Queue framework was added to Rails 4 and Action Mailer are configured by default to use this new Queue interface. The interface remains very similar to Rails 3 developers with the added benefit that changing backend providers is as easy as changing a single line of code:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># production.rb</span>
+</span><span class='line'><span class="n">config</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="ss">ActiveSupport</span><span class="p">:</span><span class="ss">:Queue</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="c1"># In this case to use Sidekiq as the Action Mailer backend</span>
+</span><span class='line'><span class="n">config</span><span class="o">.</span><span class="n">action_mailer</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="ss">Sidekiq</span><span class="p">:</span><span class="ss">:Client</span><span class="o">::</span><span class="no">Queue</span><span class="o">.</span><span class="n">new</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can read more about this feature <a href="http://blog.remarkablelabs.com/2012/12/asynchronous-action-mailer-rails-4-countdown-to-2013">here</a></p>
+
+<h2>Other smaller enhancements</h2>
+
+<p>Rails 4 is now thread-safe by default. You can read about this change on this helpful <a href="http://tenderlovemaking.com/2012/06/18/removing-config-threadsafe.html">post</a> by Aaron Patterson.</p>
+
+<p>Another addition is Turbolinks which works similarly to pjax, fetching relevant content and updating the page to avoid a full reload. Read more about it <a href="http://blog.remarkablelabs.com/2012/12/turbolinks-rails-4-countdown-to-2013">here</a></p>
+
+<p>There are many more features that I will not be able to cover here. You can read the <a href="http://edgeguides.rubyonrails.org/4_0_release_notes.html">releases notes</a> to see the detailed changes.</p>
+
+<p>Rails 4.0.1 brings some stability improvements to Rails 4. The complete set of changes are shown <a href="http://weblog.rubyonrails.org/2013/11/1/Rails-4-0-1-has-been-released/">here</a></p>
 </div>
 
 
@@ -132,7 +175,7 @@
   
 
 
-<time datetime="2012-01-16T10:07:00+01:00" pubdate data-updated="true">Jan 16<span>th</span>, 2012</time>
+<time datetime="2013-11-07T18:03:00+01:00" pubdate data-updated="true">Nov 7<span>th</span>, 2013</time>
       
 
 
@@ -140,7 +183,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://filipemoreira.com/blog/2012/01/16/starting-on-the-blogging-path/" data-via="filipeamoreira" data-counturl="http://filipemoreira.com/blog/2012/01/16/starting-on-the-blogging-path/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://filipemoreira.com/blog/2013/11/07/my-top-five-rails-4-features/" data-via="filipeamoreira" data-counturl="http://filipemoreira.com/blog/2013/11/07/my-top-five-rails-4-features/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -151,18 +194,12 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2012/03/09/using-pry-with-rails/" title="Previous Post: Using pry with Rails">&laquo; Using pry with Rails</a>
       
-        <a class="basic-alignment right" href="/blog/2012/01/24/full-text-search-with-mongodb/" title="Next Post: Full text search with MongoDB">Full text search with MongoDB &raquo;</a>
       
     </p>
   </footer>
 </article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-  </section>
 
 </div>
 
@@ -250,22 +287,6 @@
 
 </footer>
   
-
-<script type="text/javascript">
-      var disqus_shortname = 'filipemoreira';
-      
-        
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://filipemoreira.com/blog/2012/01/16/starting-on-the-blogging-path/';
-        var disqus_url = 'http://filipemoreira.com/blog/2012/01/16/starting-on-the-blogging-path/';
-        var disqus_script = 'embed.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
 
 
 

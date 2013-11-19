@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Using pry with Rails - Freelance Mobile & Web Developer</title>
+  <title>Using Pry With Rails - Freelance Mobile & Web Developer</title>
   <meta name="author" content="Filipe Moreira">
 
   
-  <meta name="description" content="Pry is a IRB replacement with some very nice additional features. I&#8217;ll link to additional resources at the end of this post. Some of the &hellip;">
+  <meta name="description" content="Pry is a IRB replacement with some very nice additional features. I&rsquo;ll link to additional resources at the end of this post. Some of the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,10 +21,11 @@
   <link rel="canonical" href="http://filipemoreira.com/blog/2012/03/09/using-pry-with-rails">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Freelance Mobile & Web Developer" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -104,7 +105,7 @@
   </header>
 
 
-<div class="entry-content"><p><a href="http://pry.github.com/">Pry</a> is a IRB replacement with some very nice additional features. I&#8217;ll link to additional resources at the end of this post.</p>
+<div class="entry-content"><p><a href="http://pry.github.com/">Pry</a> is a IRB replacement with some very nice additional features. I&rsquo;ll link to additional resources at the end of this post.</p>
 
 <p>Some of the additional features pry offers us include:</p>
 
@@ -147,7 +148,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>This will load try to load Pry and if failed will print a message to stdout. The exit command after Pry&#8217;s invocation is to avoid going back to IRB after the Pry session has finished.</p>
+<p>This will load try to load Pry and if failed will print a message to stdout. The exit command after Pry&rsquo;s invocation is to avoid going back to IRB after the Pry session has finished.</p>
 
 <p>The other part of the configuration is done on .pryrc</p>
 
@@ -182,7 +183,7 @@
 <span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">begin</span>
 </span><span class='line'>  <span class="nb">require</span> <span class="s2">&quot;awesome_print&quot;</span>
-</span><span class='line'>  <span class="no">Pry</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">print</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span><span class="o">|</span><span class="n">output</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span> <span class="no">Pry</span><span class="o">::</span><span class="no">Helpers</span><span class="o">::</span><span class="no">BaseHelpers</span><span class="o">.</span><span class="n">stagger_output</span><span class="p">(</span><span class="s2">&quot;=&gt; </span><span class="si">#{</span><span class="n">value</span><span class="o">.</span><span class="n">ai</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">output</span><span class="p">)}</span>
+</span><span class='line'>  <span class="no">Pry</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">print</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span><span class="o">|</span><span class="n">output</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span> <span class="ss">Pry</span><span class="p">:</span><span class="ss">:Helpers</span><span class="o">::</span><span class="no">BaseHelpers</span><span class="o">.</span><span class="n">stagger_output</span><span class="p">(</span><span class="s2">&quot;=&gt; </span><span class="si">#{</span><span class="n">value</span><span class="o">.</span><span class="n">ai</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">output</span><span class="p">)}</span>
 </span><span class='line'><span class="k">rescue</span> <span class="no">LoadError</span> <span class="o">=&gt;</span> <span class="n">err</span>
 </span><span class='line'>   <span class="nb">warn</span> <span class="s2">&quot;=&gt; Unable to load awesome_print&quot;</span>
 </span><span class='line'><span class="k">end</span>
@@ -194,7 +195,7 @@
 <p>For more information on Pry see:</p>
 
 <ul>
-<li><a href="http://pry.github.com/">Pry&#8217;s website</a></li>
+<li><a href="http://pry.github.com/">Pry&rsquo;s website</a></li>
 <li><a href="http://railscasts.com/episodes/280-pry-with-rails">Pry Railscast</a></li>
 <li><a href="https://github.com/filipeamoreira/dot-files/blob/master/_irbrc">My irbrc</a></li>
 <li><a href="https://github.com/filipeamoreira/dot-files/blob/master/_pryrc">My pryrc</a></li>
@@ -236,7 +237,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://filipemoreira.com/blog/2012/03/09/using-pry-with-rails/" data-via="filipeamoreira" data-counturl="http://filipemoreira.com/blog/2012/03/09/using-pry-with-rails/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://filipemoreira.com/blog/2012/03/09/using-pry-with-rails/" data-via="filipeamoreira" data-counturl="http://filipemoreira.com/blog/2012/03/09/using-pry-with-rails/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -249,6 +250,8 @@
       
         <a class="basic-alignment left" href="/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/" title="Previous Post: Routing a Wordpress blog inside a Rails app">&laquo; Routing a Wordpress blog inside a Rails app</a>
       
+      
+        <a class="basic-alignment right" href="/blog/2013/11/07/my-top-five-rails-4-features/" title="Next Post: My Top Five Rails 4 features">My Top Five Rails 4 features &raquo;</a>
       
     </p>
   </footer>
@@ -269,19 +272,23 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/03/09/using-pry-with-rails/">Using pry with Rails</a>
+        <a href="/blog/2013/11/07/my-top-five-rails-4-features/">My Top Five Rails 4 Features</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/">Routing a Wordpress blog inside a Rails app</a>
+        <a href="/blog/2012/03/09/using-pry-with-rails/">Using Pry With Rails</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/01/24/full-text-search-with-mongodb/">Full text search with MongoDB</a>
+        <a href="/blog/2012/02/01/routing-a-wordpress-blog-inside-a-rails-app/">Routing a Wordpress Blog Inside a Rails App</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/01/16/starting-on-the-blogging-path/">Starting on the blogging path</a>
+        <a href="/blog/2012/01/24/full-text-search-with-mongodb/">Full Text Search With MongoDB</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/16/starting-on-the-blogging-path/">Starting on the Blogging Path</a>
       </li>
     
   </ul>
@@ -296,7 +303,7 @@
   <a href="https://github.com/filipeamoreira">@filipeamoreira</a> on GitHub
   
   <script type="text/javascript">
-    $.domReady(function(){
+    $(document).ready(function(){
         if (!window.jXHR){
             var jxhr = document.createElement('script');
             jxhr.type = 'text/javascript';
@@ -314,23 +321,6 @@
     });
   </script>
   <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating...</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("filipeamoreira", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/filipeamoreira" class="twitter-follow-button" data-show-count="false">Follow @filipeamoreira</a>
-  
 </section>
 
 
@@ -371,7 +361,7 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -395,7 +385,7 @@
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

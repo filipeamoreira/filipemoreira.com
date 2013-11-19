@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | Freelance Mobile & Web Developer]]></title>
   <link href="http://filipemoreira.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://filipemoreira.com/"/>
-  <updated>2013-02-20T11:10:10+01:00</updated>
+  <updated>2013-11-19T18:38:24+01:00</updated>
   <id>http://filipemoreira.com/</id>
   <author>
     <name><![CDATA[Filipe Moreira]]></name>
@@ -18,7 +18,7 @@
     <link href="http://filipemoreira.com/blog/2012/03/09/using-pry-with-rails/"/>
     <updated>2012-03-09T10:00:00+01:00</updated>
     <id>http://filipemoreira.com/blog/2012/03/09/using-pry-with-rails</id>
-    <content type="html"><![CDATA[<p><a href="http://pry.github.com/">Pry</a> is a IRB replacement with some very nice additional features. I'll link to additional resources at the end of this post.</p>
+    <content type="html"><![CDATA[<p><a href="http://pry.github.com/">Pry</a> is a IRB replacement with some very nice additional features. I&rsquo;ll link to additional resources at the end of this post.</p>
 
 <p>Some of the additional features pry offers us include:</p>
 
@@ -57,7 +57,7 @@ end
 </code></pre>
 
 <p>```
-This will load try to load Pry and if failed will print a message to stdout. The exit command after Pry's invocation is to avoid going back to IRB after the Pry session has finished.</p>
+This will load try to load Pry and if failed will print a message to stdout. The exit command after Pry&rsquo;s invocation is to avoid going back to IRB after the Pry session has finished.</p>
 
 <p>The other part of the configuration is done on .pryrc</p>
 
@@ -90,7 +90,7 @@ This will try to load awesome_print gem and failing to do that will print a mess
 <p>For more information on Pry see:</p>
 
 <ul>
-<li><a href="http://pry.github.com/">Pry's website</a></li>
+<li><a href="http://pry.github.com/">Pry&rsquo;s website</a></li>
 <li><a href="http://railscasts.com/episodes/280-pry-with-rails">Pry Railscast</a></li>
 <li><a href="https://github.com/filipeamoreira/dot-files/blob/master/_irbrc">My irbrc</a></li>
 <li><a href="https://github.com/filipeamoreira/dot-files/blob/master/_pryrc">My pryrc</a></li>
@@ -106,11 +106,11 @@ This will try to load awesome_print gem and failing to do that will print a mess
     <id>http://filipemoreira.com/blog/2012/01/24/full-text-search-with-mongodb</id>
     <content type="html"><![CDATA[<p>Recently I had to implement full text search on a Ruby on Rails application I was developing and based on my needs the easiest way to do it was building a helper array with the keywords needed and search using those keywords.</p>
 
-<p>To illustrate this I've implemented stock tickers search using the awesome <a href="http://rstat.us/">rstat.us</a> project. Have a look at my <a href="https://github.com/filipeamoreira/rstat.us">Github fork.</a></p>
+<p>To illustrate this I&rsquo;ve implemented stock tickers search using the awesome <a href="http://rstat.us/">rstat.us</a> project. Have a look at my <a href="https://github.com/filipeamoreira/rstat.us">Github fork.</a></p>
 
 <p>``` ruby update.rb
 class Update
-...</p>
+&hellip;</p>
 
 <pre><code># Adds stocks array mentions
 key: stocks, Array, :default =&gt; []
@@ -133,7 +133,7 @@ end
 <p>and then the controller:
 ``` ruby updates_controller.rb
 class UpdatesController &lt; ApplicationController
-...</p>
+&hellip;</p>
 
 <pre><code>def create
   ...

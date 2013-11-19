@@ -6,7 +6,7 @@ sharing: false
 footer: true
 ---
 
-I'm available for mobile and web development work using Ruby and JavaScript.
+I'm available for mobile and web development remote contracts using Ruby and JavaScript.
 
 Get in touch:
 

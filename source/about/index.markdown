@@ -10,7 +10,7 @@ footer: true
 
 My name is Filipe Moreira and I'm a freelance web and mobile developer currently focusing on Ruby on Rails and Javascript applications.
 
-I also contribute to open source projects. Check my humble [Ruby on Rails contributions page](http://contributors.rubyonrails.org/contributors/filipe-moreira/commits) and my [Github profile](https://github.com/filipeamoreira) for more details.
+I also contribute to open source projects. Check my [Github profile](https://github.com/filipeamoreira) for more details.
 
 I consider myself a full stack developer being able to work both on the frontend and well as the backend. My currently tools of the trade are:
 
