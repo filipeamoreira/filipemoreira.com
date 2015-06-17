@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
 group :development do
   gem 'rake'
@@ -16,5 +16,7 @@ group :development do
   gem 'liquid', '2.2.2'
 end
 
+gem 'puma'
+gem 'foreman'
 gem 'sinatra', '1.2.6'
 gem 'heroku'
