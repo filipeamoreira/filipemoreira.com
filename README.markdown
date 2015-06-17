@@ -1,6 +1,5 @@
 ## This is the code for my personal website at [filipemoreira](http://filipemoreira.com)
 
-<<<<<<< HEAD
 It's based on [Octopress](http://octopress.org) and [Jekyll](https://github.com/mojombo/jekyll).
 =======
 Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
@@ -40,4 +39,3 @@ THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 #### If you want to be awesome.
 - Proudly display the 'Powered by Octopress' credit in the footer.
 - Add your site to the Wiki so we can watch the community grow.
->>>>>>> upstream/master
