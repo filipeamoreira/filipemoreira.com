@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby '2.1.1'
+ruby '2.2.2'
 group :development do
   gem 'rake'
   gem 'rack'
@@ -18,4 +18,3 @@ end
 gem 'puma'
 gem 'foreman'
 gem 'sinatra', '~> 1.4.2'
-gem 'heroku'
