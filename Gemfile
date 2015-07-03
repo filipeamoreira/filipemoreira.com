@@ -15,6 +15,7 @@ group :development do
   gem 'liquid'
 end
 
+gem 'stringex'
 gem 'puma'
 gem 'foreman'
 gem 'sinatra', '~> 1.4.2'
