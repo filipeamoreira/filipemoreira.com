@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-
+ruby '2.1.1'
 group :development do
   gem 'rake'
   gem 'rack'
@@ -12,7 +12,6 @@ group :development do
   gem 'rubypants'
   # gem 'rb-fsevent'
   gem 'rb-fsevent', :git => 'git://github.com/ttilley/rb-fsevent.git', :branch => 'pre-compiled-gem-one-off'
-  gem 'stringex'
   gem 'liquid'
 end
 
